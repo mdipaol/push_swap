@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 15:14:45 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/20 09:40:17 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/20 10:04:25 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,18 @@ void	ft_rrotate(t_list **stack)
 		tmp_2 = *stack;
 		*stack = (*stack)->next;
 	}
-	tmp_2->next = tmp_1;
-	(*stack)->next = tmp_1->next;
-	tmp_1->next = NULL;
-	tmp_1 = *stack;
+	tmp_2->next =
 }
 
 void	ft_rra(t_list **stack_a)
 {
 	ft_rrotate(stack_a);
-/* 	while ((*stack_a))
+	while ((*stack_a))
 	{
 		printf("%d ", (*stack_a)->content);
 		*stack_a = (*stack_a)->next;
-	} */
-	write(1, "rra\n", 4);
+	}
+	//write(1, "rra\n", 4);
 }
 
 void	ft_rrb(t_list **stack_b)
