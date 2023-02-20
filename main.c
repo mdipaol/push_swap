@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:05:12 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/20 10:05:06 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/20 11:21:11 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ int	main(int argc, char **argv)
 		ft_fill_a(&stack_a, argv[i]);
 		i++;
 	}
-	ft_ra(&stack_a);
+	ft_rra(&stack_a);
 }
