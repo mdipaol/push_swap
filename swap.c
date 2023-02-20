@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 15:14:41 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/19 16:08:14 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/20 09:05:55 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_swap(t_list **stack)
 void	ft_sa(t_list **stack_a)
 {
 	ft_swap(stack_a);
-/* 	while((*stack_a))
+/* 	while ((*stack_a))
 	{
 		printf("%d ", (*stack_a)->content);
 		*stack_a = (*stack_a)->next;
