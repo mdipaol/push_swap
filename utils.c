@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:44:21 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/21 11:37:11 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/21 15:11:56 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,16 @@ int	*ft_lst_to_arr(t_list **stack)
 		i++;
 	}
 	return (arr);
+}
+
+void	ft_order_arr(int *arr, t_data *data)
+{
+	int	i;
+
+	i = 0;
+	data->a_ord = 0;
+	while (arr[i])
+	{
+		data->a_ord = 1;
+	}
 }
