@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:53:39 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/20 13:19:57 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/21 11:01:02 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,16 @@ void	ft_check_three_number(t_list **stack_a, t_data *data)
 
 	i = 0;
 	arr = ft_lst_to_arr(*stack_a);
-	if (arr[0)
+	if (arr[0] > arr[1] && arr[1] < arr[2] && arr[2] > arr[0])
 		data->c_1 = 1;
-	if ()
+	if (arr[0] > arr[1] && arr[1] > arr[2] && arr[2] < arr[0])
 		data->c_2 = 1;
-	if (arr[0)
-		data->c_3= 1;
-	if ()
+	if (arr[0] > arr[1] && arr[1] < arr[2] && arr[2] < arr[0])
+		data->c_3 = 1;
+	if (arr[0] < arr[1] && arr[1] > arr[2] && arr[2] > arr[0])
 		data->c_4 = 1;
-	if (arr[0)
+	if (arr[0] < arr[1] && arr[1] > arr[2] && arr[2] < arr[0])
 		data->c_5 = 1;
-
 	free (arr);
 }
 
