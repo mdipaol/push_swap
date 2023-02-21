@@ -6,17 +6,15 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 15:14:48 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/20 12:28:19 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/21 11:17:15 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-
 void	ft_rotate(t_list **stack)
 {
 	t_list	*tmp_1;
-	t_list	*tmp_2;
 
 	tmp_1 = *stack;
 	*stack = (*stack)->next;
@@ -25,12 +23,7 @@ void	ft_rotate(t_list **stack)
 
 void	ft_ra(t_list **stack_a)
 {
-/* 	ft_rotate(stack_a);
-	while ((*stack_a))
-	{
-		printf("%d ", (*stack_a)->content);
-		*stack_a = (*stack_a)->next;
-	} */
+	ft_rotate(stack_a);
 	write(1, "ra\n", 3);
 }
 
