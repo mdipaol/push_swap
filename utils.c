@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:44:21 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/21 15:11:56 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/21 15:49:42 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,12 @@ void	ft_order_arr(int *arr, t_data *data)
 {
 	int	i;
 
-	i = 0;
+	i = 1;
 	data->a_ord = 0;
-	while (arr[i])
-	{
+	while (arr[i] && arr[i] >= arr[i-1])
+		i++;
+	if (arr[i])
 		data->a_ord = 1;
-	}
+	else
+		data->a_ord = 0;
 }
