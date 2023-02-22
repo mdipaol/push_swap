@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:05:12 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/21 15:57:44 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/22 10:40:50 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,14 @@ void	ft_ord_s(int argc, t_list **stack_a, t_list **stack_b, t_data *data)
 	free (arr);
 }
 
-void	ft_fill_a(t_list **stack_a, char *argv)
+void	ft_fill_a(t_list **stack_a, char *argv, t_data *data)
 {
 	t_list	*tmp;
 
+	data->size_stack = 0;
 	tmp = ft_lstnew(ft_atoi(argv));
 	ft_lstadd_back(stack_a, tmp);
+	data->size_stack = ft_lstsize(*stack_a);
 }
 
 int	main(int argc, char **argv)
@@ -52,7 +54,7 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	while (i < argc)
 	{
-		ft_fill_a(&stack_a, argv[i]);
+		ft_fill_a(&stack_a, argv[i], &data);
 		i++;
 	}
 	ft_ord_s(argc, &stack_a, &stack_b, &data);
