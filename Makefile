@@ -6,7 +6,7 @@
 #    By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 12:05:54 by mdi-paol          #+#    #+#              #
-#    Updated: 2023/02/22 10:47:58 by mdi-paol         ###   ########.fr        #
+#    Updated: 2023/02/22 14:04:03 by mdi-paol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,26 +16,33 @@ SRC = main.c push.c reverse_rotate.c rotate.c small_numbers.c swap.c utils.c lis
 OBJ = $(SRC:.c=.o)
 FLAGS = -Wall -Werror -Wextra -g
 
-all : $(NAME_SERVER)
+all : $(NAME)
 
-$(NAME_SERVER) : lf push_swap
+$(NAME) : lf ps
 
 lf:
-			@make -C libft
+	@make -sC libft
+	@make bonus -sC libft
 
-push_swap: $(OBJ)
-			gcc $(FLAGS) $(SRC) $(Libft) -o $(NAME)
+ps: $(OBJ)
+			gcc $(FLAGS) $(SRC) $(LIBFT) -o $(NAME)
+			@echo "\033[1;32m✅ Compiled ✅\033[0m"
 
 clean :		libclean
 			rm -rf $(OBJ)
+			@echo "\033[1;34m☑️  Clean ☑️\033[0m"
 
 libclean :
-			@make clean -C libft
+	@make clean -sC libft
 
-fclean :		clean libfclean
+fclean :	clean libfclean
 			rm -rf $(NAME)
+			@echo "\033[1;34m☑️  Clean ☑️\033[0m"
 
 libfclean :
-			@make fclean -C libft
+			@make fclean -sC libft
 
 re : fclean all
+
+.SILENT:
+
