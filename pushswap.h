@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:01:06 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/22 14:03:47 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/23 15:44:12 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef	struct s_data
 	int	c_5;
 	int	a_ord;
 	int	size_stack;
+	int *lis;
 }			t_data;
 
 void	ft_sa(t_list **stack_a);
