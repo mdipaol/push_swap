@@ -6,13 +6,19 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:05:12 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/24 16:43:04 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/24 18:42:55 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // 09/02/22 12:05
 
 #include "pushswap.h"
+
+void	ft_order_manager(t_list **stack_a, t_list **stack_b, t_data *data)
+{
+	ft_prepare_lis(stack_a, stack_b, data);
+	ft_mov_b(stack_a, stack_b, data);
+}
 
 void	ft_ord_s(int argc, t_list **stack_a, t_list **stack_b, t_data *data)
 {
@@ -29,9 +35,7 @@ void	ft_ord_s(int argc, t_list **stack_a, t_list **stack_b, t_data *data)
 		else if (argc == 6)
 			ft_five_numbers(stack_a, stack_b, data);
 		else if (argc > 6)
-		{
-			ft_prepare_lis(stack_a, stack_b, data);
-		}
+			ft_order_manager(stack_a, stack_b, data);
 	}
 	free (arr);
 }

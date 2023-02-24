@@ -6,13 +6,13 @@
 #    By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 12:05:54 by mdi-paol          #+#    #+#              #
-#    Updated: 2023/02/24 16:40:58 by mdi-paol         ###   ########.fr        #
+#    Updated: 2023/02/24 18:38:30 by mdi-paol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 LIBFT = libft/libft.a
-SRC = main.c push.c reverse_rotate.c rotate.c small_numbers.c swap.c utils.c lis.c
+SRC = main.c push.c reverse_rotate.c rotate.c small_numbers.c swap.c utils.c lis.c move.c
 OBJ = $(SRC:.c=.o)
 FLAGS = -Wall -Werror -Wextra -g
 
@@ -25,7 +25,7 @@ lf:
 	@make bonus -sC libft
 
 ps: $(OBJ)
-			gcc $(FLAGS) $(SRC) $(LIBFT) -o $(NAME)
+			gcc $(SRC) $(LIBFT) -o $(NAME)
 			@echo "\033[1;32m✅ Compiled ✅\033[0m"
 
 clean :		libclean
