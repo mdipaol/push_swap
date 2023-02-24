@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 17:41:51 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/23 15:44:44 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/23 15:59:58 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	ft_max_lis(int *lenght)
 	}
 	return (tmp);
 }
+
 
 void	ft_create_lis(int *arr, int *lenght, t_data *data)
 {
