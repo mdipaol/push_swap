@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 17:41:51 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/23 15:59:58 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/24 16:43:04 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,17 @@ int	ft_max_lis(int *lenght)
 	return (tmp);
 }
 
-
 void	ft_create_lis(int *arr, int *lenght, t_data *data)
 {
 	int	j;
-	int	*lis;
 	int	flag;
 	int	max;
 	int	size;
 
-	size = data->size_stack;
+	size = data->size_stack_a;
 	max = ft_max_lis(lenght);
-	lis = (int *)ft_calloc(sizeof(int), max);
+	data->max_lis = max;
+	data->lis = (int *)ft_calloc(sizeof(int), max);
 	while (max > 0)
 	{
 		j = size - 1;
@@ -51,7 +50,7 @@ void	ft_create_lis(int *arr, int *lenght, t_data *data)
 		{
 			if (lenght[j] == max && flag)
 			{
-				lis[max - 1] = arr[j];
+				data->lis[max - 1] = arr[j];
 				size = j;
 				flag = 0;
 			}
@@ -69,7 +68,7 @@ void	ft_lis(int *arr, int *lenght, t_data *data)
 	i = 1;
 	j = 0;
 	lenght[0] = 1;
-	while (i < data->size_stack)
+	while (i < data->size_stack_a)
 	{
 		lenght[i] = 1;
 		j = 0;
@@ -86,12 +85,40 @@ void	ft_lis(int *arr, int *lenght, t_data *data)
 	ft_create_lis(arr, lenght, data);
 }
 
-void	ft_prepare_lis(t_list **stack_a, t_data *data)
+void	ft_push_lis(t_list **stack_a, t_list **stack_b, t_data *data)
+{
+	int	i;
+	int	j;
+	int	*arr;
+
+	i = 0;
+	j = 0;
+	arr = ft_lst_to_arr(stack_a);
+	while (i < data->size_stack_a)
+	{
+		if (arr[i] == data->lis[j] && j < data->max_lis)
+		{
+			ft_ra(stack_a);
+			i++;
+			j++;
+		}
+		else
+		{
+			ft_pb(stack_a, stack_b);
+			i++;
+		}
+	}
+	free (arr);
+}
+
+void	ft_prepare_lis(t_list **stack_a, t_list **stack_b, t_data *data)
 {
 	int	*arr;
 	int	*lenght;
 
 	arr = ft_lst_to_arr(stack_a);
-	lenght = (int *)ft_calloc(sizeof(int), data->size_stack + 1);
+	lenght = (int *)ft_calloc(sizeof(int), data->size_stack_a + 1);
 	ft_lis(arr, lenght, data);
+	free (arr);
+	ft_push_lis(stack_a, stack_b, data);
 }
