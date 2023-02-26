@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:01:06 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/25 18:51:24 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/26 23:18:28 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,7 @@ void	ft_order_arr(int *arr, t_data *data);
 void	ft_prepare_lis(t_list **stack_a, t_list **stack_b, t_data *data);
 void	ft_mov_b(t_list **stack_b, t_data *data);
 void	ft_prepare_mov_a(t_list **stack_a, t_list **stack_b, t_data *data);
+int		ft_max_arr_a(int *arr, t_data *data);
+int		ft_min_arr_a(int *arr, int len, t_data *data);
 
 #endif
