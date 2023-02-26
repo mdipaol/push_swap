@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:01:06 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/24 18:37:07 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/25 18:51:24 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h>
 # include <stdio.h>
 
-typedef	struct s_data
+typedef struct s_data
 {
 	int	c_1;
 	int	c_2;
@@ -27,8 +27,9 @@ typedef	struct s_data
 	int	a_ord;
 	int	size_stack_a;
 	int	size_stack_b;
-	int *lis;
+	int	*lis;
 	int	max_lis;
+	int	*mov_a;
 	int	*mov_b;
 }			t_data;
 
@@ -49,6 +50,7 @@ void	ft_four_numbers(t_list **stack_a, t_list **stack_b, t_data *data);
 void	ft_five_numbers(t_list **stack_a, t_list **stack_b, t_data *data);
 void	ft_order_arr(int *arr, t_data *data);
 void	ft_prepare_lis(t_list **stack_a, t_list **stack_b, t_data *data);
-void	ft_mov_b(t_list **stack_a, t_list **stack_b, t_data *data);
+void	ft_mov_b(t_list **stack_b, t_data *data);
+void	ft_prepare_mov_a(t_list **stack_a, t_list **stack_b, t_data *data);
 
 #endif

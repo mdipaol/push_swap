@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:05:12 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/24 18:42:55 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/25 18:51:14 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 void	ft_order_manager(t_list **stack_a, t_list **stack_b, t_data *data)
 {
 	ft_prepare_lis(stack_a, stack_b, data);
-	ft_mov_b(stack_a, stack_b, data);
+	ft_mov_b(stack_b, data);
+	ft_prepare_mov_a(stack_a, stack_b, data);
 }
 
 void	ft_ord_s(int argc, t_list **stack_a, t_list **stack_b, t_data *data)
