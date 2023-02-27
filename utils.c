@@ -6,13 +6,31 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:44:21 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/26 23:20:35 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/27 19:15:08 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-int	ft_min_arr_a(int *arr, int len, t_data *data)
+int	ft_count_mov_a(int *stacka, int prepare_mov_a, int len_a, t_data *data)
+{
+	int	i;
+	int	j;
+
+	j = 0;
+	i = 0;
+	while (i < len_a)
+	{
+		if (prepare_mov_a == stacka[i] && i <= (len_a / 2))
+			j = i;
+		else if (prepare_mov_a == stacka[i] && i <= len_a)
+			j = i - len_a;
+		i++;
+	}
+	return (j);
+}
+
+int	ft_min_arr_a(int *arr, int len_a, t_data *data)
 {
 	int	i;
 	int	a;
@@ -20,7 +38,7 @@ int	ft_min_arr_a(int *arr, int len, t_data *data)
 	i = 1;
 	a = arr[0];
 	//printf("len=%d ", len);
-	while (i < len)
+	while (i < len_a)
 	{
 		//printf("i=%d ", i);
 		if (arr[i] < a)
@@ -38,14 +56,14 @@ int	ft_min_arr_a(int *arr, int len, t_data *data)
 }
 
 
-int	ft_max_arr_a(int *arr, t_data *data)
+int	ft_max_arr_a(int *arr, int len_a, t_data *data)
 {
 	int	i;
 	int	a;
 
 	i = 0;
 	a = arr[i];
-	while (i < data->size_stack_a)
+	while (i < len_a)
 	{
 		if (arr[i] > a)
 			a = arr[i];
@@ -73,8 +91,6 @@ int	*ft_lst_to_arr(t_list **stack)
 	}
 	return (arr);
 }
-
-
 
 void	ft_order_arr(int *arr, t_data *data)
 {

@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:01:06 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/26 23:18:28 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/27 19:19:12 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct s_data
 	int	max_lis;
 	int	*mov_a;
 	int	*mov_b;
+	int	*mov_c;
 }			t_data;
 
 void	ft_sa(t_list **stack_a);
@@ -52,7 +53,12 @@ void	ft_order_arr(int *arr, t_data *data);
 void	ft_prepare_lis(t_list **stack_a, t_list **stack_b, t_data *data);
 void	ft_mov_b(t_list **stack_b, t_data *data);
 void	ft_prepare_mov_a(t_list **stack_a, t_list **stack_b, t_data *data);
-int		ft_max_arr_a(int *arr, t_data *data);
-int		ft_min_arr_a(int *arr, int len, t_data *data);
+int		ft_max_arr_a(int *arr, int len_a, t_data *data);
+int		ft_min_arr_a(int *arr, int len_a, t_data *data);
+int		ft_count_mov_a(int *stacka, int prepare_mov_a, int len_a, t_data *data);
+void	ft_mov_c(t_list **stack_a, t_list **stack_b, t_data *data);
+int		ft_both_numbers(int i, t_data *data);
+int		ft_case_negative_positive(int i, t_data *data);
+int		ft_min_mov_c(t_data *data);
 
 #endif

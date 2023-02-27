@@ -6,22 +6,36 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 15:48:37 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/27 00:12:17 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/27 19:13:33 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-void	ft_create_mov_a(int *stacka, int *prepare_mov_a, t_data *data)
+void	ft_create_mov_a(int *stacka, int *prepare_mov_a, int len_a, t_data *data)
 {
-	int	i;
-	i = 0;
+	int	i = 0;
+	int	j;
+	int	count;
+	int	*mov_a;
+	int y = 0;
 
+	j = data->size_stack_b - 1;
+	while (j > 0)
+	{
+		mov_a[j] = ft_count_mov_a(stacka, prepare_mov_a[y], len_a, data);
+		j--;
+		y++;
+	}
+	data->mov_a = mov_a;
+	//free (mov_a);
+/* 	printf("mov_a ");
 	while (i < data->size_stack_b)
 	{
-		printf("%d ", prepare_mov_a[i]);
+		printf("|%d|", mov_a[i]);
 		i++;
 	}
+	printf("\n"); */
 }
 
 void	ft_mov_a(t_list **stack_a, int *stacka, int *stackb, int *prepare_mov_a, t_data *data)
@@ -30,11 +44,10 @@ void	ft_mov_a(t_list **stack_a, int *stacka, int *stackb, int *prepare_mov_a, t_
 	int	j;
 	int	flag;
 	int	y;
-	int	len = ft_lstsize(*stack_a);
-	int	max = ft_max_arr_a(stacka, data);
-	int	min = ft_min_arr_a(stacka, len, data);
-	printf("max=%d\n", max);
-	printf("min=%d\n", min);
+	int	len_a = ft_lstsize(*stack_a);
+	int	max = ft_max_arr_a(stacka, len_a, data);
+	int	min = ft_min_arr_a(stacka, len_a, data);
+
 	i = 0;
 	j = 0;
 	y = data->size_stack_b - 1;
@@ -61,7 +74,7 @@ void	ft_mov_a(t_list **stack_a, int *stacka, int *stackb, int *prepare_mov_a, t_
 		}
 		i++;
 	}
-	ft_create_mov_a (stacka, prepare_mov_a, data);
+	ft_create_mov_a (stacka, prepare_mov_a, len_a, data);
 }
 
 
@@ -82,6 +95,7 @@ void	ft_mov_b(t_list **stack_b, t_data *data)
 	int	*mov_b;
 	int	i;
 
+	i = 0;
 	data->size_stack_b = ft_lstsize(*stack_b);
 	mov_b = (int *)ft_calloc(sizeof(int), data->size_stack_b);
 	while (i < data->size_stack_b)
@@ -93,4 +107,13 @@ void	ft_mov_b(t_list **stack_b, t_data *data)
 		i++;
 	}
 	data->mov_b = mov_b;
+	//free (mov_b);
+/* 	i = 0;
+	printf("mov_b ");
+	while (i < data->size_stack_b)
+	{
+		printf("|%d|", mov_b[i]);
+		i++;
+	}
+	printf("\n"); */
 }
