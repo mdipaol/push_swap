@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 15:48:37 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/27 19:13:33 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/28 14:05:52 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_create_mov_a(int *stacka, int *prepare_mov_a, int len_a, t_data *data)
 	int y = 0;
 
 	j = data->size_stack_b - 1;
-	while (j > 0)
+	while (j >= 0)
 	{
 		mov_a[j] = ft_count_mov_a(stacka, prepare_mov_a[y], len_a, data);
 		j--;
@@ -74,6 +74,7 @@ void	ft_mov_a(t_list **stack_a, int *stacka, int *stackb, int *prepare_mov_a, t_
 		}
 		i++;
 	}
+	printf("%d", prepare_mov_a[0]);
 	ft_create_mov_a (stacka, prepare_mov_a, len_a, data);
 }
 

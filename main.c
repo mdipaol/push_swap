@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:05:12 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/27 20:21:52 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/28 14:09:05 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,19 @@
 
 void	ft_order_manager(t_list **stack_a, t_list **stack_b, t_data *data)
 {
+	int	i;
+
 	ft_prepare_lis(stack_a, stack_b, data);
-	ft_mov_b(stack_b, data);
-	ft_prepare_mov_a(stack_a, stack_b, data);
-	ft_mov_c(stack_a, stack_b, data);
-	ft_choose_push_a(stack_a, stack_b, data);
+	//i = ft_lstsize(*stack_b);
+	//printf("%d", i);
+/* 	while (i > 0)
+	{ */
+		ft_mov_b(stack_b, data);
+		ft_prepare_mov_a(stack_a, stack_b, data);
+		ft_mov_c(stack_a, stack_b, data);
+		ft_choose_push_a(stack_a, stack_b, data);
+/* 		i = ft_lstsize(*stack_b);
+	} */
 }
 
 void	ft_ord_s(int argc, t_list **stack_a, t_list **stack_b, t_data *data)
@@ -68,6 +76,5 @@ int	main(int argc, char **argv)
 		ft_fill_a(&stack_a, argv[i], &data);
 		i++;
 	}
-
 	ft_ord_s(argc, &stack_a, &stack_b, &data);
 }

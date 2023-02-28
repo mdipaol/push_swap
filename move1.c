@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 15:43:19 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/27 19:14:47 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/28 13:59:25 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,6 @@ void	ft_mov_c(t_list **stack_a, t_list **stack_b, t_data *data)
 	mov_c = (int *)ft_calloc(sizeof(int), data->size_stack_b);
 	mov_c = ft_create_mov_c(mov_c, data);
 	data->mov_c = mov_c;
-	ft_print(mov_c, data);
+	//ft_print(mov_c, data);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:44:21 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/27 19:15:08 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/28 14:05:58 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,15 @@ int	ft_count_mov_a(int *stacka, int prepare_mov_a, int len_a, t_data *data)
 
 	j = 0;
 	i = 0;
+/* 	printf("j=%d\n", j);
+	printf("len=%d\n", len_a); */
 	while (i < len_a)
 	{
 		if (prepare_mov_a == stacka[i] && i <= (len_a / 2))
 			j = i;
 		else if (prepare_mov_a == stacka[i] && i <= len_a)
 			j = i - len_a;
+
 		i++;
 	}
 	return (j);

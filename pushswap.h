@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:01:06 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/27 20:38:50 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/28 11:34:37 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,10 @@ void	ft_mov_c(t_list **stack_a, t_list **stack_b, t_data *data);
 int		ft_both_numbers(int i, t_data *data);
 int		ft_case_negative_positive(int i, t_data *data);
 int		ft_min_mov_c(t_data *data);
-void	ft_case_both_positive_pa(t_list **stack_a, t_list **stack_b, int i, t_data *data);
-void	ft_case_both_negative_pa(t_list **stack_a, t_list **stack_b, int i, t_data *data);
-void	ft_case_positive_negative_pa(t_list **stack_a, t_list **stack_b, int i, t_data *data);
-void	ft_case_negative_positive_pa(t_list **stack_a, t_list **stack_b, int i, t_data *data);
+void	ft_case_both_positive_pa(t_list **stack_a, t_list **stack_b, t_data *data);
+void	ft_case_both_negative_pa(t_list **stack_a, t_list **stack_b, t_data *data);
+void	ft_case_positive_negative_pa(t_list **stack_a, t_list **stack_b, t_data *data);
+void	ft_case_negative_positive_pa(t_list **stack_a, t_list **stack_b, t_data *data);
 void	ft_choose_push_a(t_list **stack_a, t_list **stack_b, t_data *data);
 
 #endif
