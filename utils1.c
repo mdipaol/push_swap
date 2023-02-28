@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 16:58:53 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/28 14:06:27 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/28 19:00:41 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,46 @@ int	ft_min_mov_c(t_data *data)
 			tmp = data->mov_c[i];
 		i++;
 	}
+	return (tmp);
+}
+
+int	ft_min(int *min, int len_a)
+{
+	int	i;
+	int	tmp;
+
+	i = 0;
+	tmp = min[i];
+	while (i < len_a)
+	{
+		if (min[i] < tmp)
+			tmp = min[i];
+		i++;
+	}
+	return (tmp);
+}
+
+int	ft_search_min_mov_a(int	*stacka, int b, int len_a)
+{
+	int	i;
+	int	j;
+	int	tmp;
+	int	*min;
+
+	i = 0;
+	j = 0;
+	min = (int *)ft_calloc(sizeof(int), len_a);
+	while (i < len_a)
+	{
+		if (stacka[i] > b)
+		{
+			min[j] = stacka[i];
+			j++;
+		}
+		i++;
+	}
+	tmp = ft_min(min, j);
+	i = 0;
+	free(min);
 	return (tmp);
 }

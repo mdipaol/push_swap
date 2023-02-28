@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 15:14:48 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/21 11:17:15 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/28 18:41:16 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_rb(t_list **stack_b)
 
 void	ft_rr(t_list **stack_a, t_list **stack_b)
 {
-	ft_ra(stack_a);
-	ft_rb(stack_b);
+	ft_rotate(stack_a);
+	ft_rotate(stack_b);
 	write(1, "rr\n", 3);
 }

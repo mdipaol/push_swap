@@ -6,60 +6,48 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:44:21 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/28 14:05:58 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/28 18:56:28 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
 
-int	ft_count_mov_a(int *stacka, int prepare_mov_a, int len_a, t_data *data)
+int	ft_count_mov_a(int *stacka, int prepare_mov_a, int len_a)
 {
 	int	i;
 	int	j;
 
 	j = 0;
 	i = 0;
-/* 	printf("j=%d\n", j);
-	printf("len=%d\n", len_a); */
 	while (i < len_a)
 	{
 		if (prepare_mov_a == stacka[i] && i <= (len_a / 2))
 			j = i;
 		else if (prepare_mov_a == stacka[i] && i <= len_a)
 			j = i - len_a;
-
 		i++;
 	}
 	return (j);
 }
 
-int	ft_min_arr_a(int *arr, int len_a, t_data *data)
+int	ft_min_arr_a(int *arr, int len_a)
 {
 	int	i;
 	int	a;
 
 	i = 1;
 	a = arr[0];
-	//printf("len=%d ", len);
 	while (i < len_a)
 	{
-		//printf("i=%d ", i);
 		if (arr[i] < a)
 			a = arr[i];
-		//printf("a=%d ", a);
 		i++;
 	}
-	int j = 0;
-	/* while (arr[j])
-	{
-		printf("arr=%d ", arr[j]);
-		j++;
-	} */
 	return (a);
 }
 
 
-int	ft_max_arr_a(int *arr, int len_a, t_data *data)
+int	ft_max_arr_a(int *arr, int len_a)
 {
 	int	i;
 	int	a;

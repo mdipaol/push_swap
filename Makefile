@@ -6,7 +6,7 @@
 #    By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 12:05:54 by mdi-paol          #+#    #+#              #
-#    Updated: 2023/02/27 20:19:36 by mdi-paol         ###   ########.fr        #
+#    Updated: 2023/02/28 18:48:01 by mdi-paol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ lf:
 	@make bonus -sC libft
 
 ps: $(OBJ)
-			gcc $(SRC) $(LIBFT) -o $(NAME)
+			gcc $(FLAGS) $(SRC) $(LIBFT) -o $(NAME)
 			@echo "\033[1;32m✅ Compiled ✅\033[0m"
 
 clean :		libclean

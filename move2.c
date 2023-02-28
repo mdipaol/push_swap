@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 18:53:29 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/28 11:34:21 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/28 19:02:41 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,6 @@ void	ft_choose_push_a(t_list **stack_a, t_list **stack_b, t_data *data)
 {
 	int	min_mov_c;
 	int	index;
-	int	x;
-	int	y;
 
 	min_mov_c = ft_min_mov_c(data);
 	index = ft_index_push_mov_c(min_mov_c, data);

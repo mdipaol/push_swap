@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 20:14:26 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/28 12:37:07 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/28 18:41:14 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,28 +30,30 @@ void	ft_case_both_positive_pa(t_list **stack_a, t_list **stack_b, t_data *data)
 		ft_rb(stack_b);
 		data->y--;
 	}
-	ft_pa(stack_a, stack_b);
+	if (data->x == 0 && data->y == 0)
+		ft_pa(stack_a, stack_b);
 }
 
-void	ft_case_both_negative_pa(t_list **stack_a, t_list **stack_b, t_data *data)  //DA FINIRE, CONTROLLA, MANUEL DEL FUTURO
+void	ft_case_both_negative_pa(t_list **stack_a, t_list **stack_b, t_data *data)
 {
 	while (data->x < 0 && data->y < 0)
 	{
 		ft_rrr(stack_a, stack_b);
-		data->x--;
-		data->y--;
+		data->x++;
+		data->y++;
 	}
 	while (data->x < 0)
 	{
 		ft_rra(stack_a);
-		data->x--;
+		data->x++;
 	}
 	while (data->y < 0)
 	{
 		ft_rrb(stack_b);
-		data->y--;
+		data->y++;
 	}
-	ft_pa(stack_a, stack_b);
+	if (data->x == 0 && data->y == 0)
+		ft_pa(stack_a, stack_b);
 }
 
 void	ft_case_positive_negative_pa(t_list **stack_a, t_list **stack_b, t_data *data)
@@ -64,23 +66,25 @@ void	ft_case_positive_negative_pa(t_list **stack_a, t_list **stack_b, t_data *da
 	while (data->y < 0)
 	{
 		ft_rrb(stack_b);
-		data->y--;
+		data->y++;
 	}
-	ft_pa(stack_a, stack_b);
+	if (data->x == 0 && data->y == 0)
+		ft_pa(stack_a, stack_b);
 }
 
 void	ft_case_negative_positive_pa(t_list **stack_a, t_list **stack_b, t_data *data)
 {
 	while (data->x < 0)
 	{
-		ft_ra(stack_a);
-		data->x--;
+		ft_rra(stack_a);
+		data->x++;
 	}
 	while (data->y > 0)
 	{
 		ft_rb(stack_b);
 		data->y--;
 	}
-	ft_pa(stack_a, stack_b);
+	if (data->x == 0 && data->y == 0)
+		ft_pa(stack_a, stack_b);
 }
 

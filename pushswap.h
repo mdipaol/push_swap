@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:01:06 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/28 11:34:37 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/28 19:07:16 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct s_data
 	int	*mov_c;
 	int	x;
 	int	y;
+	int *stacka;
+	int *stackb;
 }			t_data;
 
 void	ft_sa(t_list **stack_a);
@@ -55,10 +57,10 @@ void	ft_order_arr(int *arr, t_data *data);
 void	ft_prepare_lis(t_list **stack_a, t_list **stack_b, t_data *data);
 void	ft_mov_b(t_list **stack_b, t_data *data);
 void	ft_prepare_mov_a(t_list **stack_a, t_list **stack_b, t_data *data);
-int		ft_max_arr_a(int *arr, int len_a, t_data *data);
-int		ft_min_arr_a(int *arr, int len_a, t_data *data);
-int		ft_count_mov_a(int *stacka, int prepare_mov_a, int len_a, t_data *data);
-void	ft_mov_c(t_list **stack_a, t_list **stack_b, t_data *data);
+int		ft_max_arr_a(int *arr, int len_a);
+int		ft_min_arr_a(int *arr, int len_a);
+int		ft_count_mov_a(int *stacka, int prepare_mov_a, int len_a);
+void	ft_mov_c(t_data *data);
 int		ft_both_numbers(int i, t_data *data);
 int		ft_case_negative_positive(int i, t_data *data);
 int		ft_min_mov_c(t_data *data);
@@ -67,5 +69,7 @@ void	ft_case_both_negative_pa(t_list **stack_a, t_list **stack_b, t_data *data);
 void	ft_case_positive_negative_pa(t_list **stack_a, t_list **stack_b, t_data *data);
 void	ft_case_negative_positive_pa(t_list **stack_a, t_list **stack_b, t_data *data);
 void	ft_choose_push_a(t_list **stack_a, t_list **stack_b, t_data *data);
+int		ft_search_min_mov_a(int	*stacka, int b, int len_a);
+int		ft_min(int *min, int len_a);
 
 #endif

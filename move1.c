@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 15:43:19 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/28 13:59:25 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/28 18:59:23 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,22 @@ int	*ft_create_mov_c(int *mov_c, t_data *data)
 void	ft_print(int *mov_c, t_data *data)
 {
 	int	i = 0;
+	printf ("stack_a= ");
+	while (data->stacka[i])
+	{
+		printf("|%d|", data->stacka[i]);
+		i++;
+	}
+	printf("\n");
+	i = 0;
+	printf ("stack_b= ");
+	while (i < data->size_stack_b)
+	{
+		printf("|%d|", data->stackb[i]);
+		i++;
+	}
+	printf("\n");
+	i = 0;
 	printf ("mov_a= ");
 	while (i < data->size_stack_b)
 	{
@@ -106,14 +122,10 @@ void	ft_print(int *mov_c, t_data *data)
 	printf("\n");
 }
 
-void	ft_mov_c(t_list **stack_a, t_list **stack_b, t_data *data)
+void	ft_mov_c(t_data *data)
 {
-	int	i;
-	int	j;
 	int	*mov_c;
 
-	i = 0;
-	j = 0;
 	mov_c = (int *)ft_calloc(sizeof(int), data->size_stack_b);
 	mov_c = ft_create_mov_c(mov_c, data);
 	data->mov_c = mov_c;

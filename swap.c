@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 15:14:41 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/21 11:28:59 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/28 18:21:11 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_sb(t_list **stack_b)
 
 void	ft_ss(t_list **stack_a, t_list **stack_b)
 {
-	ft_sa(stack_a);
-	ft_sb(stack_b);
+	ft_swap(stack_a);
+	ft_swap(stack_b);
 	write(1, "ss\n", 3);
 }

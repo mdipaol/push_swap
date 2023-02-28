@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:05:12 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/28 14:09:05 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/02/28 19:19:44 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,46 @@
 
 #include "pushswap.h"
 
+void	ft_last_order(t_list **stack_a) //FINIRE
+{
+	int *stacka;
+	int	size;
+	int	min;
+	int	i;
+
+	i = 0;
+	stacka = ft_lst_to_arr(stack_a);
+	size = ft_lstsize(*stack_a);
+	min = ft_min(stacka, size);
+	while (i < size)
+	{
+		if (i <= size / 2)
+			ft_ra(stack_a);
+		else
+			ft_rra(stack_a);
+		i++;
+	}
+}
+
 void	ft_order_manager(t_list **stack_a, t_list **stack_b, t_data *data)
 {
 	int	i;
 
 	ft_prepare_lis(stack_a, stack_b, data);
-	//i = ft_lstsize(*stack_b);
-	//printf("%d", i);
-/* 	while (i > 0)
-	{ */
+	i = ft_lstsize(*stack_b);
+	while (i > 0)
+	{
+		int	*stacka = ft_lst_to_arr(stack_a);
+		int	*stackb = ft_lst_to_arr(stack_b);
+		data->stacka = stacka;
+		data->stackb = stackb;
 		ft_mov_b(stack_b, data);
 		ft_prepare_mov_a(stack_a, stack_b, data);
-		ft_mov_c(stack_a, stack_b, data);
+		ft_mov_c(data);
 		ft_choose_push_a(stack_a, stack_b, data);
-/* 		i = ft_lstsize(*stack_b);
-	} */
+		i = ft_lstsize(*stack_b);
+	}
+	ft_last_order(stack_a);
 }
 
 void	ft_ord_s(int argc, t_list **stack_a, t_list **stack_b, t_data *data)
