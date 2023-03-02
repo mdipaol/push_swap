@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:01:06 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/28 19:07:16 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/03/01 19:37:21 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,8 @@ void	ft_case_negative_positive_pa(t_list **stack_a, t_list **stack_b, t_data *da
 void	ft_choose_push_a(t_list **stack_a, t_list **stack_b, t_data *data);
 int		ft_search_min_mov_a(int	*stacka, int b, int len_a);
 int		ft_min(int *min, int len_a);
+void	ft_free_stack_a(t_list **stack_a);
+void	ft_free_order(t_data *data);
+void	ft_check_all(int argc, char **argv);
 
 #endif

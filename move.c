@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 15:48:37 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/28 19:01:13 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/03/01 18:05:04 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,9 @@ void	ft_prepare_mov_a(t_list **stack_a, t_list **stack_b, t_data *data)
 	stackb = ft_lst_to_arr(stack_b);
 	prepare_mov_a = (int *)ft_calloc(sizeof(int), data->size_stack_b);
 	ft_mov_a(stack_a, stacka, stackb, prepare_mov_a, data);
+	free(prepare_mov_a);
+	free(stacka);
+	free(stackb);
 }
 
 void	ft_mov_b(t_list **stack_b, t_data *data)

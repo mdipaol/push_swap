@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 11:44:21 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/28 18:56:28 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:32:12 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,9 +89,9 @@ void	ft_order_arr(int *arr, t_data *data)
 
 	i = 1;
 	data->a_ord = 0;
-	while (arr[i] && arr[i] >= arr[i-1])
+	while (i < data->size_stack_a && arr[i] >= arr[i - 1])
 		i++;
-	if (arr[i] == '\0')
+	if (i == (data->size_stack_a))
 		data->a_ord = 1;
 	else
 		data->a_ord = 0;

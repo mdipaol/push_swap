@@ -6,11 +6,22 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 16:58:53 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/28 19:00:41 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/03/01 17:59:55 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pushswap.h"
+
+void	ft_free_stack_a(t_list **stack_a)
+{
+	t_list	*tmp;
+	while (*stack_a)
+	{
+		tmp = *stack_a;
+		*stack_a = (*stack_a)->next;
+		free(tmp);
+	}
+}
 
 int	ft_both_numbers(int i, t_data *data)
 {

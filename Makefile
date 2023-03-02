@@ -6,13 +6,13 @@
 #    By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 12:05:54 by mdi-paol          #+#    #+#              #
-#    Updated: 2023/02/28 18:48:01 by mdi-paol         ###   ########.fr        #
+#    Updated: 2023/03/01 19:17:23 by mdi-paol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 LIBFT = libft/libft.a
-SRC = main.c push.c reverse_rotate.c rotate.c small_numbers.c swap.c utils.c lis.c move.c move1.c utils1.c move2.c move3.c
+SRC = main.c push.c reverse_rotate.c rotate.c small_numbers.c swap.c utils.c lis.c move.c move1.c utils1.c move2.c move3.c utils2.c check.c
 OBJ = $(SRC:.c=.o)
 FLAGS = -Wall -Werror -Wextra -g
 

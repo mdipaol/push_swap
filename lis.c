@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 17:41:51 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/02/25 19:44:31 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/03/01 18:06:06 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,4 +121,6 @@ void	ft_prepare_lis(t_list **stack_a, t_list **stack_b, t_data *data)
 	ft_lis(arr, lenght, data);
 	free (arr);
 	ft_push_lis(stack_a, stack_b, data);
+	free (data->lis);
+	free (lenght);
 }
