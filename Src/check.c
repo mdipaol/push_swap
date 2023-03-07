@@ -6,11 +6,11 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 19:17:09 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/03/06 16:58:08 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/03/07 12:17:20 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "../pushswap.h"
 
 long int	*ft_fill_arr(int argc, char **argv)
 {

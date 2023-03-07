@@ -6,11 +6,11 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 12:53:39 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/03/06 18:05:28 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/03/06 18:11:17 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "../pushswap.h"
 
 void	ft_two_numbers(t_list **stack_a)
 {

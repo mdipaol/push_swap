@@ -6,11 +6,11 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/24 15:48:37 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/03/06 17:03:43 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/03/07 17:07:34 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "../pushswap.h"
 
 void	ft_create_mov_a(int *stacka, int *prepare_mov_a, int len_a, t_data *data)
 {
@@ -54,7 +54,6 @@ void	ft_mov_a(t_list **stack_a, int *stacka, int *stackb, int *prepare_mov_a, t_
 	}
 	ft_create_mov_a (stacka, prepare_mov_a, len_a, data);
 }
-
 
 void	ft_prepare_mov_a(t_list **stack_a, t_list **stack_b, t_data *data)
 {

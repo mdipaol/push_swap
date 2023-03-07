@@ -6,11 +6,11 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/27 15:43:19 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/03/06 17:07:13 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/03/07 16:53:10 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "../pushswap.h"
 
 int	ft_case_positive_negative(int i, t_data *data)
 {
@@ -87,4 +87,3 @@ void	ft_mov_c(t_data *data)
 	mov_c = ft_create_mov_c(mov_c, data);
 	data->mov_c = mov_c;
 }
-

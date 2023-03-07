@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils2.c                                           :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/01 17:54:09 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/03/06 17:01:27 by mdi-paol         ###   ########.fr       */
+/*   Created: 2023/02/19 15:14:24 by mdi-paol          #+#    #+#             */
+/*   Updated: 2023/02/28 18:41:15 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "../pushswap.h"
 
-void	ft_free_order(t_data *data)
+void	ft_pa(t_list **stack_a, t_list **stack_b)
 {
-	free(data->mov_a);
-	free(data->mov_b);
-	free(data->mov_c);
+	t_list	*tmp_1;
+
+	tmp_1 = *stack_b;
+	*stack_b = (*stack_b)->next;
+	tmp_1->next = *stack_a;
+	*stack_a = tmp_1;
+	write (1, "pa\n", 3);
 }
 
-void	ft_initialize(t_data *data)
+void	ft_pb(t_list **stack_a, t_list **stack_b)
 {
-	data->c_1 = 0;
-	data->c_2 = 0;
-	data->c_3 = 0;
-	data->c_4 = 0;
-	data->c_5 = 0;
+	t_list	*tmp_1;
+
+	tmp_1 = *stack_a;
+	*stack_a = (*stack_a)->next;
+	tmp_1->next = *stack_b;
+	*stack_b = tmp_1;
+	write (1, "pb\n", 3);
 }

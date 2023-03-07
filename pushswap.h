@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:01:06 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/03/01 19:37:21 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/03/06 17:57:53 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ typedef struct s_data
 	int	*mov_c;
 	int	x;
 	int	y;
-	int *stacka;
-	int *stackb;
+	int	*stacka;
+	int	*stackb;
 }			t_data;
 
 void	ft_sa(t_list **stack_a);
@@ -74,5 +74,9 @@ int		ft_min(int *min, int len_a);
 void	ft_free_stack_a(t_list **stack_a);
 void	ft_free_order(t_data *data);
 void	ft_check_all(int argc, char **argv);
+void	ft_check_limit(long int *arr, int size);
+void	ft_initialize(t_data *data);
+void	ft_two_numbers(t_list **stack_a);
+void	ft_move_five_numbers(int *a, t_list **stack_a, t_list **stack_b);
 
 #endif

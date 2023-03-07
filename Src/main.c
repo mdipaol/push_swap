@@ -6,49 +6,24 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:05:12 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/03/06 18:04:11 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/03/06 19:47:55 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // 09/02/22 12:05
 
-#include "pushswap.h"
+#include "../pushswap.h"
 
 void	ft_last_order(t_list **stack_a)
 {
 	int	*stacka;
 	int	size;
 	int	min;
-	int	i;
-	int	j;
 
-	i = 0;
-	j = 0;
 	stacka = ft_lst_to_arr(stack_a);
 	size = ft_lstsize(*stack_a);
 	min = ft_min(stacka, size);
-	while (i < size)
-	{
-		if (stacka[i] == min)
-			j = i;
-		i++;
-	}
-	if (j < size / 2)
-	{
-		while (j > 0)
-		{
-			ft_ra(stack_a);
-			j--;
-		}
-	}
-	else if (j < size)
-	{
-		while (j < size)
-		{
-			ft_rra(stack_a);
-			j++;
-		}
-	}
+	ft_last_order_2(stack_a, stacka, size, min);
 	free(stacka);
 }
 
@@ -102,10 +77,8 @@ void	ft_ord_s(int argc, t_list **stack_a, t_list **stack_b, t_data *data)
 			ft_order_manager(stack_a, stack_b, data);
 	}
 	if (!data->a_ord)
-	{
 		ft_last_order(stack_a);
-		ft_free_stack_a(stack_a);
-	}
+	ft_free_stack_a(stack_a);
 	free (arr);
 }
 
