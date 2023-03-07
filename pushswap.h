@@ -6,7 +6,7 @@
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 12:01:06 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/03/06 17:57:53 by mdi-paol         ###   ########.fr       */
+/*   Updated: 2023/03/07 17:06:50 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_data
 	int	a_ord;
 	int	size_stack_a;
 	int	size_stack_b;
+	int *prepare_mov_a;
 	int	*lis;
 	int	max_lis;
 	int	*mov_a;
@@ -36,6 +37,7 @@ typedef struct s_data
 	int	y;
 	int	*stacka;
 	int	*stackb;
+	int	*stackaa;
 }			t_data;
 
 void	ft_sa(t_list **stack_a);
@@ -78,5 +80,6 @@ void	ft_check_limit(long int *arr, int size);
 void	ft_initialize(t_data *data);
 void	ft_two_numbers(t_list **stack_a);
 void	ft_move_five_numbers(int *a, t_list **stack_a, t_list **stack_b);
+void	ft_last_order_2(t_list **stack_a, int *stacka, int size, int min);
 
 #endif

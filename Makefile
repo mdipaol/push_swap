@@ -6,14 +6,16 @@
 #    By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/09 12:05:54 by mdi-paol          #+#    #+#              #
-#    Updated: 2023/03/06 17:58:36 by mdi-paol         ###   ########.fr        #
+#    Updated: 2023/03/07 14:27:25 by mdi-paol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+NAME_BONUS = checker
 LIBFT = libft/libft.a
-SRC = main.c push.c reverse_rotate.c rotate.c small_numbers.c swap.c utils.c lis.c move.c move1.c utils1.c move2.c move3.c utils2.c check.c check2.c small_numbers1.c
-OBJ = $(SRC:.c=.o)
+GNL = Get_Next_Line/get_next_line.c Get_Next_Line/get_next_line_utils.c
+SRC = Src/*.c
+SRC_BONUS = Src_bonus/*.c
 FLAGS = -Wall -Werror -Wextra -g
 
 all : $(NAME)
@@ -24,19 +26,23 @@ lf:
 	@make -sC libft
 	@make bonus -sC libft
 
-ps: $(OBJ)
+ps:
 			gcc $(FLAGS) $(SRC) $(LIBFT) -o $(NAME)
 			@echo "\033[1;32m✅ Compiled ✅\033[0m"
 
+bonus: all
+			gcc $(FLAGS) $(SRC_BONUS) $(GNL) $(LIBFT) -o $(NAME_BONUS)
+			@echo "\033[1;32m✅ Compiled Bonus ✅\033[0m"
+
 clean :		libclean
-			rm -rf $(OBJ)
+			rm -rf
 			@echo "\033[1;34m☑️  Clean ☑️\033[0m"
 
 libclean :
 	@make clean -sC libft
 
 fclean :	clean libfclean
-			rm -rf $(NAME)
+			rm -rf $(NAME) $(NAME_BONUS)
 			@echo "\033[1;34m☑️  Clean ☑️\033[0m"
 
 libfclean :

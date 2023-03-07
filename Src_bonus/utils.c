@@ -5,61 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mdi-paol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/20 11:44:21 by mdi-paol          #+#    #+#             */
-/*   Updated: 2023/03/07 17:11:07 by mdi-paol         ###   ########.fr       */
+/*   Created: 2023/03/06 19:24:31 by mdi-paol          #+#    #+#             */
+/*   Updated: 2023/03/06 19:38:46 by mdi-paol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswap.h"
+#include "../pushswap_bonus.h"
 
-int	ft_count_mov_a(int *stacka, int prepare_mov_a, int len_a)
+void	ft_free_stack_a(t_list **stack_a)
 {
-	int	i;
-	int	j;
+	t_list	*tmp;
 
-	j = 0;
-	i = 0;
-	while (i < len_a)
+	while (*stack_a)
 	{
-		if (prepare_mov_a == stacka[i] && i <= (len_a / 2))
-			j = i;
-		else if (prepare_mov_a == stacka[i] && i <= len_a)
-			j = i - len_a;
-		i++;
+		tmp = *stack_a;
+		*stack_a = (*stack_a)->next;
+		free(tmp);
 	}
-	return (j);
-}
-
-int	ft_min_arr_a(int *arr, int len_a)
-{
-	int	i;
-	int	a;
-
-	i = 1;
-	a = arr[0];
-	while (i < len_a)
-	{
-		if (arr[i] < a)
-			a = arr[i];
-		i++;
-	}
-	return (a);
-}
-
-int	ft_max_arr_a(int *arr, int len_a)
-{
-	int	i;
-	int	a;
-
-	i = 0;
-	a = arr[i];
-	while (i < len_a)
-	{
-		if (arr[i] > a)
-			a = arr[i];
-		i++;
-	}
-	return (a);
 }
 
 int	*ft_lst_to_arr(t_list **stack)
